@@ -29,59 +29,108 @@ img {
 
 header .container
 {
-
-
-
-
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    background-color: green;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: start;
 }
 
 /*===============Profile Container=================*/
 
 .profile
 {
-
-
-
+    display: contents;
 }
 
 
 /*===============Profile Items=================*/
 .profile-image
 {
-
-
+    
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #dbdbdb;
 }
 
-
+.profile-image img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 /*===============Profile Items - User Settings=================*/
 .profile-user-settings
 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
 
+.profile-user-name {
+    font-size: 2.8rem;
+    font-weight: bold;
+}
 
+.profile-user-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 0.3rem;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.profile-settings-btn i {
+    font-size: 1.8rem;
 }
 
 
 /*===============Profile Items - Stats=================*/
 .profile-stats
 {
-
-
-
-
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
 }
 
+.profile-stats ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    gap: 2rem;
+}
+
+.profile-stats li {
+    font-size: 1.6rem;
+}
+
+.profile-stat-count {
+    font-weight: bold;
+}
 
 
 /*===============Profile Items - Bio=================*/
-.profile-bio
-{
-
-
-
-
+.profile-bio {
+    margin-bottom: 1rem;
 }
 
-
+.profile-real-name {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
 
 /*==================Main Gallery Container================*/
 
