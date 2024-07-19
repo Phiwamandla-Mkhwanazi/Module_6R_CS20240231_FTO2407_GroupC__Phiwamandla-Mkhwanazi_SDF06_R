@@ -21,3 +21,110 @@ body {
 img {
     display: block;
 }
+
+
+/*Challenge Solved Below*/
+
+/*==================Main Profile Container================*/
+
+header .container
+{
+
+
+
+
+}
+
+/*===============Profile Container=================*/
+
+.profile
+{
+
+
+
+}
+
+
+/*===============Profile Items=================*/
+.profile-image
+{
+
+
+}
+
+
+/*===============Profile Items - User Settings=================*/
+.profile-user-settings
+{
+
+
+}
+
+
+/*===============Profile Items - Stats=================*/
+.profile-stats
+{
+
+
+
+
+}
+
+
+
+/*===============Profile Items - Bio=================*/
+.profile-bio
+{
+
+
+
+
+}
+
+
+
+/*==================Main Gallery Container================*/
+
+main .container
+{
+
+
+
+
+}
+
+/*===============Gallery Inner Container=================*/
+
+.gallery
+{
+
+
+
+}
+
+
+/*===============Gallery Items=================*/
+.gallery-items
+{
+
+
+}
+
+
+/*===============Gallery Items Info=================*/
+.gallery-item-info
+{
+
+
+}
+
+
+/*==========Reload Animation At the bottom============*/
+.loader
+{
+
+
+
+
+}
+
