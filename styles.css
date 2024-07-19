@@ -2,6 +2,7 @@
 
 :root {
     font-size: 10px;
+    --primary-color: #659f8f;
 }
 
 *,
@@ -22,68 +23,78 @@ img {
     display: block;
 }
 
-
-/*Challenge Solved Below*/
+/* Challenge Solved Below */
 
 /*==================Main Profile Container================*/
 
-header .container
+header .container 
 {
-    width: 90%;
+    width: 50%;
     max-width: 1200px;
     margin: auto;
-    overflow: hidden;
-    background-color: green;
     display: grid;
     grid-template-columns: 150px 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
     align-items: start;
+    padding: 10px; 
 }
 
 /*===============Profile Container=================*/
 
-.profile
+.profile 
 {
-    display: contents;
+    display: contents; 
 }
 
+/*===========Align profile-user-settings, profile-stats, and profile-bio in block form================*/
+.profile-details 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 
 /*===============Profile Items=================*/
-.profile-image
+.profile-image 
 {
-    
-    width: 150px;
+    width: 170px;
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
-    border: 1px solid #dbdbdb;
+    border: 8px solid var(--primary-color);
 }
 
-.profile-image img
+.profile-image img 
 {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 /*===============Profile Items - User Settings=================*/
-.profile-user-settings
+.profile-user-settings, .profile-stats, .profile-bio 
 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     margin-bottom: 1rem;
 }
 
-.profile-user-name {
-    font-size: 2.8rem;
-    font-weight: bold;
-}
-
-.profile-user-buttons {
+.profile-user-settings 
+{
+    margin: auto;
     display: flex;
+    align-items: center;
+    justify-content: center; /* Positioning from far right to middle */
     gap: 10px;
 }
 
-.btn {
+.profile-user-name 
+{
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.btn 
+{
     font-size: 1.4rem;
     font-weight: 600;
     padding: 0.5rem 1rem;
@@ -92,88 +103,208 @@ header .container
     background-color: #fff;
     cursor: pointer;
 }
-
-.profile-settings-btn i {
-    font-size: 1.8rem;
+ /*Add animation - pseudo class hover over the button */
+.btn:hover 
+{
+    background-color: aliceblue;
 }
 
+
+
+.profile-settings-btn i 
+{
+    font-size: 1rem;
+}
 
 /*===============Profile Items - Stats=================*/
-.profile-stats
+.profile-stats 
 {
+    margin: auto auto;
     display: flex;
+    justify-content: center; /* Positioning from far right to middle */
     gap: 2rem;
-    margin-bottom: 1rem;
 }
 
-.profile-stats ul {
+.profile-stats ul 
+{
     display: flex;
     padding: 0;
     list-style: none;
     gap: 2rem;
 }
 
-.profile-stats li {
-    font-size: 1.6rem;
+.profile-stats li 
+{
+    font-size: 1.3rem;
 }
 
-.profile-stat-count {
+.profile-stat-count 
+{
     font-weight: bold;
 }
 
-
 /*===============Profile Items - Bio=================*/
-.profile-bio {
-    margin-bottom: 1rem;
+.profile-bio 
+{
+    text-align: center; 
+    gap: 1rem;
+    font-size: 1.3rem;
 }
 
-.profile-real-name {
+.profile-real-name 
+{
     font-weight: bold;
     font-size: 1.6rem;
 }
 
 /*==================Main Gallery Container================*/
 
-main .container
+main .container 
 {
-
-
-
-
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+    max-width: 1200px;
+    overflow: hidden;
 }
 
 /*===============Gallery Inner Container=================*/
 
-.gallery
-{
-
-
-
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 }
-
 
 /*===============Gallery Items=================*/
-.gallery-items
+.gallery-item 
 {
-
-
+    position: relative;
 }
 
+.gallery-image 
+{
+    width: 100%;
+    display: block;
+}
 
 /*===============Gallery Items Info=================*/
-.gallery-item-info
+.gallery-item-info 
 {
-
-
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
+.gallery-item:hover .gallery-item-info,.gallery-item:focus .gallery-item-info 
+{
+    opacity: 1;
+}
+
+.gallery-item-type 
+{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.visually-hidden 
+{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
 
 /*==========Reload Animation At the bottom============*/
-.loader
+.loader 
 {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    animation: spin 2s linear infinite;
+    margin: 2rem auto;
+}
+
+/*================Keyframe Section=============================*/
+@keyframes spin 
+{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*=================Media Queries Section=======================*/
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) 
+{
+    header .container 
+    {
+        width: 70%;
+        grid-template-columns: 1fr;
+    }
+
+    .profile-details 
+    {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    
+
+    .profile-user-settings ,.profile-stats, .profile-bio
+    {
+        justify-content:start;
+        text-align: start;
+    }
+
+    .gallery 
+    {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1012px) 
+{
+    
+    header .container 
+    {
+        grid-template-columns: 1fr;
+    }
 
 
+    .profile-user-settings ,.profile-stats, .profile-bio
+    {
+        justify-content:start;
+        text-align: start;
+    }
+
+
+    .gallery 
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
 
 }
-
